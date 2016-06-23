@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.views.webview.ReactWebViewManager;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Nullable;
@@ -25,6 +26,7 @@ public class WebViewBridgeManager extends ReactWebViewManager {
   @Override
   public @Nullable Map<String, Integer> getCommandsMap() {
     Map<String, Integer> commandsMap = super.getCommandsMap();
+    if (commandsMap == null) commandsMap = new HashMap<>();   // Fix potential NPE
 
     commandsMap.put("injectBridgeScript", COMMAND_INJECT_BRIDGE_SCRIPT);
     commandsMap.put("sendToBridge", COMMAND_SEND_TO_BRIDGE);

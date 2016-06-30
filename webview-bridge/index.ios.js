@@ -15,24 +15,27 @@
 'use strict';
 
 var React = require('react');
-var ReactNative = require('react-native');
 var invariant = require('invariant');
 var keyMirror = require('keymirror');
 var resolveAssetSource = require('react-native/Libraries/Image/resolveAssetSource');
 
+var React = require('react');
+var {PropTypes} = React;
 var {
-  ActivityIndicatorIOS,
-  EdgeInsetsPropType,
-  StyleSheet,
-  Text,
-  View,
-  WebView,
-  requireNativeComponent,
-  UIManager,
-  NativeModules: {
-    WebViewBridgeManager
-  }
-} = ReactNative;
+    ActivityIndicatorIOS,
+    EdgeInsetsPropType,
+    StyleSheet,
+    Text,
+    View,
+    WebView,
+    requireNativeComponent,
+    UIManager,
+    NativeModules: {
+        WebViewBridgeManager
+    },
+    findNodeHandle
+} = require('react-native');
+
 var { PropTypes } = React;
 
 var BGWASH = 'rgba(255,255,255,0.8)';

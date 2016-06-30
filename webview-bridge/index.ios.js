@@ -36,7 +36,6 @@ var {
     findNodeHandle
 } = require('react-native');
 
-var { PropTypes } = React;
 
 var BGWASH = 'rgba(255,255,255,0.8)';
 var RCT_WEBVIEWBRIDGE_REF = 'webviewbridge';
@@ -244,7 +243,7 @@ var WebViewBridge = React.createClass({
   },
 
   getWebViewBridgeHandle: function(): any {
-    return ReactNative.findNodeHandle(this.refs[RCT_WEBVIEWBRIDGE_REF]);
+    return findNodeHandle(this.refs[RCT_WEBVIEWBRIDGE_REF]);
   },
 
   onLoadingStart: function(event: Event) {
